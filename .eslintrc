@@ -1,0 +1,10 @@
+{
+  "extends": "amex",
+  "plugins": [
+    "jest",
+    "react"
+  ],
+  "env": {
+    "jest": true
+  }
+}
