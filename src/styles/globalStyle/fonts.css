@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "PTSerif-Bold";
+  src: url("../../../static/fonts/PTSerif/PTSerif-Bold.ttf");
+}
+@font-face {
+  font-family: "PTSerif-BoldItalic";
+  src: url("../../../static/fonts/PTSerif/PTSerif-BoldItalic.ttf");
+}
+@font-face {
+  font-family: "PTSerif-Regular";
+  src: url("../../../static/fonts/PTSerif/PTSerif-Regular.ttf");
+}
+@font-face {
+  font-family: "PTSerif-Italic";
+  src: url("../../../static/fonts/PTSerif/PTSerif-Italic.ttf");
+}
+@font-face {
+  font-family: "AverageSans-Regular";
+  src: url("../../../static/fonts/AverageSans/AverageSans-Regular.ttf");
+}

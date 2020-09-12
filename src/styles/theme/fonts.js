@@ -1,10 +1,9 @@
 const fonts = {
-  avenirNextHeavy: "avenir-next-heavy, system, sans-serif",
-  avenirNextBold: "avenir-next-bold, system, sans-serif",
-  avenirNextDemi: "avenir-next-demi, system, sans-serif",
-  avenirNextMedium: "avenir-next-medium, system, sans-serif",
-  avenirNextRegular: "avenir-next-regular, system, sans-serif",
-  avenirNextThin: "avenir-next-thin, system, sans-serif"
+  PTSerifBold: "PTSerif-Bold",
+  PTSerifBoldItalic: "PTSerif-BoldItalic",
+  PTSerifItalic: "PTSerif-Italic",
+  PTSerifRegular: "PTSerif-Regular",
+  AverageSansRegular: "AverageSans-Regular"
 }
 
 export default fonts

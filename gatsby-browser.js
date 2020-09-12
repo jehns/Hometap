@@ -8,7 +8,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import theme from './src/styles/theme';
 import GlobalStyle from './src/styles/globalStyle';
-
+import "./src/styles/globalStyle/fonts.css"
 
 export const wrapRootElement = ({ element }) => {
  return (
