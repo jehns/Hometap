@@ -4,8 +4,6 @@ const sizes = {
   mobile: 550,
   tablet: 625,
   smallDesktop: 860,
-  // tiny: 475,
-  // miniscule: 320
 }
 
 const media = Object.keys(sizes).reduce((accu, label) => {

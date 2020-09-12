@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">
-  Hometap Coding Challenge Bootstrapped Gatsby's default starter
+  Hometap Coding Challenge
 </h1>
 
 <h2>
