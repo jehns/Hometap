@@ -8,5 +8,5 @@ export default {
   fonts,
   colors,
   media,
-  flexboxTheme
+  flexboxgrid: flexboxTheme
 }

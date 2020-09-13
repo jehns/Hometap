@@ -14,7 +14,7 @@ import Header from './Header';
 
 const Wrapper = styled.div`
   margin: 0 auto;
-  max-width: 650px;
+  max-width: 700px;
   padding: 0 1.0875rem 1.45rem;
 `
 
@@ -35,11 +35,11 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <Wrapper>
         <main>{children}</main>
-        <footer>
+        {/* <footer>
           © {new Date().getFullYear()}, Built with
           {' '}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        </footer> */}
       </Wrapper>
     </>
   );

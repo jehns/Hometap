@@ -2,7 +2,6 @@ import { useStaticQuery } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 import Img from "gatsby-image";
-// import PropTypes from 'prop-types';
 
 
 const Header = styled.header`
@@ -37,12 +36,5 @@ const HeaderComponent = () => {
   )
 };
 
-// Header.propTypes = {
-//   siteTitle: PropTypes.string,
-// };
-
-// Header.defaultProps = {
-//   siteTitle: '',
-// };
 
 export default HeaderComponent;
