@@ -1,5 +1,5 @@
 export default {
-  gridSize: 16, // columns
+  gridSize: 12, // columns
   gutterWidth: 1, // rem
   outerMargin: 0, // rem
   mediaQuery: 'only screen',

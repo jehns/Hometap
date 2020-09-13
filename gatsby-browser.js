@@ -8,17 +8,17 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import theme from './src/styles/theme';
 import GlobalStyle from './src/styles/globalStyle';
-import "./src/styles/globalStyle/fonts.css"
 import { FormContextProvider } from './src/context/form';
+import "./src/styles/globalStyle/fonts.css";
 
 
 export const wrapRootElement = ({ element }) => {
- return (
-  <ThemeProvider theme={theme}>
-    <FormContextProvider>
-      <GlobalStyle />
-      {element}
-    </FormContextProvider>
-  </ThemeProvider>
- );
+  return (
+    <ThemeProvider theme={theme}>
+      <FormContextProvider>
+        <GlobalStyle />
+        {element}
+      </FormContextProvider>
+    </ThemeProvider>
+  );
 };

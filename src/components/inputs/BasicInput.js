@@ -12,7 +12,6 @@ const Input = styled.input`
   outline: none;
   height: 38px;
   width: 100%;
-  /* max-width: 325px; */
   font-family: ${props => props.theme.fonts.AverageSansRegular};
   font-size: 1rem;
   text-indent: 9px;
@@ -44,8 +43,7 @@ BasicInput.propTypes = {
 BasicInput.defaultProps = {
   placeholderText: '',
   name: "",
-  value: "",
-  handleChange: () => null
+  value: ""
 };
 
 
