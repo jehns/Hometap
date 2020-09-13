@@ -9,12 +9,16 @@ import { ThemeProvider } from 'styled-components';
 import theme from './src/styles/theme';
 import GlobalStyle from './src/styles/globalStyle';
 import "./src/styles/globalStyle/fonts.css"
+import { FormContextProvider } from './src/context/form';
+
 
 export const wrapRootElement = ({ element }) => {
  return (
   <ThemeProvider theme={theme}>
-    <GlobalStyle />
-    {element}
+    <FormContextProvider>
+      <GlobalStyle />
+      {element}
+    </FormContextProvider>
   </ThemeProvider>
  );
 };

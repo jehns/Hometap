@@ -23,20 +23,29 @@ const Input = styled.input`
   caret-color: ${props => props.theme.colors.black};
 `
 
-const BasicInput = ({placeholderText}) => {
+const BasicInput = ({placeholderText, name, value, handleChange}) => {
   return (
     <Input
       placeholder={placeholderText}
+      name={name}
+      onChange={handleChange}
+      value={value}
     />
   )
 }
 
 BasicInput.propTypes = {
   placeholderText: PropTypes.string,
+  handleChange: PropTypes.func,
+  name: PropTypes.string,
+  value: PropTypes.string
 };
 
 BasicInput.defaultProps = {
   placeholderText: '',
+  name: "",
+  value: "",
+  handleChange: () => null
 };
 
 
