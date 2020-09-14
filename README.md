@@ -1,8 +1,4 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
+
 <h1 align="center">
   Hometap Coding Challenge
 </h1>
@@ -15,10 +11,9 @@
   Responsive form with styling, validation, and test setup
 </h3>
 
-## 🚀 to view:
-<p>
-  Deployed at:
-</p>
-<p>
-  for development on you local machine run "npm run dev"
-</p>
+## 🚀 to view 🚀
+
+### Deployed at: https://frosty-bardeen-3fe548.netlify.app/
+
+
+### for development on you local machine run "npm run dev"
