@@ -99,8 +99,10 @@ class FormValidation {
       })
       return;
     }
+
     const zipCodeLocation = await validateZipCode(this[FORM_CONSTANTS.ZIP])
-    if (!zipCodeLocation.state) {
+
+    if (!zipCodeLocation) {
       this.errors.push({
         input: FORM_CONSTANTS.ZIP,
         message: "please enter a valid zip code."
@@ -113,7 +115,6 @@ class FormValidation {
     // email regex
     const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const isValid = regex.test(String(this[FORM_CONSTANTS.EMAIL]).toLowerCase());
-    console.log("email???", isValid)
     if (!isValid) {
       this.errors.push({
         input: FORM_CONSTANTS.EMAIL,

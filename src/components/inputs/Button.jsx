@@ -8,6 +8,7 @@ const Button = styled.button`
   width: 320px;
   border: none;
   border-radius: .3rem;
+  margin: 0 7px;
   font: ${props => props.theme.fonts.AverageSansRegular};
   font-size: 18px;
   color: ${props => props.theme.colors.white};

@@ -17,6 +17,17 @@ import FormValidation from './formValidation'
 const FormTitle = styled.h1`
   font-family: ${props => props.theme.fonts.PTSerifBold};
   font-size: 38px;
+  padding: 0 7px;
+`
+
+const SubTitle = styled.div`
+  font-family: ${props => props.theme.fonts.AverageSansRegular};
+  font-size: 20px;
+  padding: 0 7px;
+`
+
+const Bold = styled.span`
+  font-weight: bold;
 `
 
 const Form = () => {
@@ -47,9 +58,13 @@ const Form = () => {
 
   return (
     <form onSubmit={handleFormSubmit}>
-      <Spacer desktop={2} mobile={0} />
       <FormTitle>Is my property eligible for a Hometap Investment?</FormTitle>
-      <Spacer desktop={10} mobile={5} />
+      <Spacer desktop={8} mobile={5} />
+      <SubTitle>
+        You can prequalify for a Hometap investment in <Bold>under one minute.</Bold> First, we need some information:
+      </SubTitle>
+      <Spacer desktop={30} mobile={30} />
+
       <Grid>
         <Row>
           <Col {...FORM_COLUMNS.half}>
@@ -231,7 +246,7 @@ const Form = () => {
         <Row>
           <Button
             id="button"
-            text="Check eligibility"
+            text="Check my property's eligibility"
             disabled={isDisabled}
           />
         </Row>

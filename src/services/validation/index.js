@@ -25,10 +25,11 @@ const mockResponse = {
 
 export const validateZipCode = async (zipCode) => {
   try {
-    // const location = await axios.get(`${process.env.GATSBY_ZIP_CODE_API}/rest/${process.env.GATSBY_ZIP_CODE_KEY}/info.json/${zipCode}/radians`)
-    // return location
-    return mockResponse
+    const location = await axios.get(`/${process.env.GATSBY_ZIP_CODE_API}/rest/${process.env.GATSBY_ZIP_CODE_KEY}/info.json/${zipCode}/radians`)
+    return location
   } catch (error) {
     console.log("service error validating zip code:", error)
+    // temporarily returning mock response because i am limited to 10 requests per hour and a faied request is usually due to that
+    return mockResponse
   }
 }
