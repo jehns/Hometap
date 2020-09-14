@@ -20,7 +20,6 @@ const SpacerContainer = styled.div`
 `
 
 const Spacer = ({ desktop, mobile, direction, unit}) => {
-  console.log(desktop, mobile)
   return (
     <SpacerContainer
       desktop={desktop}

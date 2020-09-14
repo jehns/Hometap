@@ -1,15 +1,16 @@
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import { Grid, Col, Row } from 'react-styled-flexboxgrid';
-import BasicInput from '../components/inputs/BasicInput';
-import InputLabel from '../components/inputs/InputLabel';
-import Spacer from '../utils/Spacer';
-import { FORM_COLUMNS } from '../styles/constants'
-import { FORM_CONSTANTS } from '../constants'
-import { useFormContext } from '../context/form';
-import Checkbox from './inputs/Checkbox';
-import Button from './inputs/Button';
-import { FormValidation, getInputErrors } from '../utils/form'
+import BasicInput from '../inputs/BasicInput';
+import InputLabel from '../inputs/InputLabel';
+import Spacer from '../../utils/Spacer';
+import { FORM_COLUMNS } from '../../styles/constants'
+import { FORM_CONSTANTS } from '../../constants'
+import { useFormContext } from '../../context/form';
+import Checkbox from '../inputs/Checkbox';
+import Button from '../inputs/Button';
+import { getInputErrors } from '../../utils/form';
+import FormValidation from './formValidation'
 
 const FormTitle = styled.h1`
   font-family: ${props => props.theme.fonts.PTSerifBold};
@@ -68,6 +69,7 @@ const Form = () => {
               name={FORM_CONSTANTS.LAST_NAME}
               value={state[FORM_CONSTANTS.LAST_NAME]}
               handleChange={handleFieldChange}
+              error={getInputErrors(FORM_CONSTANTS.LAST_NAME, state.errors)}
             />
             <Spacer desktop={0} mobile={10} />
           </Col>
@@ -84,6 +86,7 @@ const Form = () => {
               name={FORM_CONSTANTS.EMAIL}
               value={state[FORM_CONSTANTS.EMAIL]}
               handleChange={handleFieldChange}
+              error={getInputErrors(FORM_CONSTANTS.EMAIL, state.errors)}
             />
             <Spacer desktop={0} mobile={10} />
           </Col>
@@ -100,6 +103,7 @@ const Form = () => {
               name={FORM_CONSTANTS.PHONE}
               value={state[FORM_CONSTANTS.PHONE]}
               handleChange={handleFieldChange}
+              error={getInputErrors(FORM_CONSTANTS.PHONE, state.errors)}
             />
             <Spacer desktop={0} mobile={10} />
           </Col>
@@ -116,6 +120,7 @@ const Form = () => {
               name={FORM_CONSTANTS.STREET}
               value={state[FORM_CONSTANTS.STREET]}
               handleChange={handleFieldChange}
+              error={getInputErrors(FORM_CONSTANTS.STREET, state.errors)}
             />
             <Spacer desktop={0} mobile={10} />
           </Col>
@@ -219,7 +224,7 @@ const Form = () => {
         <Row>
           <Button
             id="button"
-            text="Button"
+            text="Check eligibility"
             disabled={isDisabled}
           />
         </Row>
