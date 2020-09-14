@@ -1,4 +1,4 @@
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 import Img from "gatsby-image";
@@ -31,7 +31,9 @@ const HeaderComponent = () => {
 
   return (
     <Header>
-      <Img fixed={data.file.childImageSharp.fixed} alt="Hometap" />
+      <Link to="/">
+        <Img fixed={data.file.childImageSharp.fixed} alt="Hometap" />
+      </Link>
     </Header>
   )
 };

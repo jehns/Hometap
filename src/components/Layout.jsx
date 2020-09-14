@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components'
 import Header from './Header';
+import Spacer from '../utils/Spacer';
 
 
 const Wrapper = styled.div`
@@ -28,6 +29,7 @@ const Layout = ({ children }) => {
       <Wrapper>
         <main>{children}</main>
       </Wrapper>
+      <Spacer desktop={40} mobile={30} />
     </>
   );
 };

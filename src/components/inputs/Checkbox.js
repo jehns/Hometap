@@ -15,11 +15,11 @@ const Input = styled.input`
   width: 22px;
 `;
 
-const Checkbox = ({id, name, text, handleChange}) => {
+const Checkbox = ({id, name, text, handleChange, checked}) => {
   return (
     <Wrapper>
-      <Input type="checkbox" id={id} name={name} onChange={handleChange} />
-      <Spacer desktop={5} mobile={0} direction="width" />
+      <Input type="checkbox" id={id} checked={checked} name={name} onChange={handleChange} />
+      <Spacer desktop={5} mobile={5} direction="width" />
       <label htmlFor={id}>{text}</label>
     </Wrapper>
   )
@@ -29,13 +29,15 @@ Checkbox.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string,
   text: PropTypes.string,
-  handleChange: PropTypes.func
+  handleChange: PropTypes.func,
+  checked: PropTypes.bool
 };
 
 Checkbox.defaultProps = {
   id: "",
   name: "",
-  text: ""
+  text: "",
+  checked: false
 };
 
 

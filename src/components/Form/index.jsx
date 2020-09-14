@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { navigate } from 'gatsby'
 import styled from 'styled-components';
 import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 import BasicInput from '../inputs/BasicInput';
@@ -12,8 +13,10 @@ import Button from '../inputs/Button';
 import { getInputErrors } from '../../utils/form';
 import FormValidation from './formValidation'
 
+
 const FormTitle = styled.h1`
   font-family: ${props => props.theme.fonts.PTSerifBold};
+  font-size: 38px;
 `
 
 const Form = () => {
@@ -32,20 +35,21 @@ const Form = () => {
     dispatch({ type: 'ERRORS', payload: []})
     const formValidation = new FormValidation(state)
     const validatedForm = formValidation.validate()
-    console.log("VALID: ", validatedForm)
     if (validatedForm.errors.length) {
       dispatch({ type: 'ERRORS', payload: validatedForm.errors})
     } else {
-      // submit form aka redirect with form values
+      // submit form (redirect to success page)
+      navigate('/success')
     }
-    // console.log("HANDLER: ", errors)
-    // dispatch({ type: 'SUBMIT_FORM', payload: { name: e.target.name, value: e.target.checked} })
   }
+
   const isDisabled = useMemo(() => FormValidation.isSubmitButtonDisabled(state), [state]);
 
   return (
     <form onSubmit={handleFormSubmit}>
+      <Spacer desktop={2} mobile={0} />
       <FormTitle>Is my property eligible for a Hometap Investment?</FormTitle>
+      <Spacer desktop={10} mobile={5} />
       <Grid>
         <Row>
           <Col {...FORM_COLUMNS.half}>
@@ -148,6 +152,7 @@ const Form = () => {
               name={FORM_CONSTANTS.CITY}
               value={state[FORM_CONSTANTS.CITY]}
               handleChange={handleFieldChange}
+              error={getInputErrors(FORM_CONSTANTS.CITY, state.errors)}
             />
             <Spacer desktop={0} mobile={10} />
           </Col>
@@ -164,6 +169,7 @@ const Form = () => {
               name={FORM_CONSTANTS.STATE}
               value={state[FORM_CONSTANTS.STATE]}
               handleChange={handleFieldChange}
+              error={getInputErrors(FORM_CONSTANTS.STATE, state.errors)}
             />
             <Spacer desktop={0} mobile={10} />
           </Col>
@@ -175,6 +181,7 @@ const Form = () => {
               name={FORM_CONSTANTS.ZIP}
               value={state[FORM_CONSTANTS.ZIP]}
               handleChange={handleFieldChange}
+              error={getInputErrors(FORM_CONSTANTS.ZIP, state.errors)}
             />
             <Spacer desktop={0} mobile={10} />
           </Col>
