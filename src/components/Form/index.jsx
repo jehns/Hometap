@@ -77,7 +77,7 @@ const Form = () => {
               handleChange={handleFieldChange}
               error={getInputErrors(FORM_CONSTANTS.FIRST_NAME, state.errors)}
             />
-            <Spacer desktop={0} mobile={10} />
+            <Spacer desktop={0} mobile={20} />
           </Col>
 
           <Col {...FORM_COLUMNS.half}>
@@ -141,7 +141,7 @@ const Form = () => {
               handleChange={handleFieldChange}
               error={getInputErrors(FORM_CONSTANTS.STREET, state.errors)}
             />
-            <Spacer desktop={0} mobile={10} />
+            <Spacer desktop={0} mobile={20} />
           </Col>
           <Col {...FORM_COLUMNS.half}>
             <InputLabel text="Unit" required={false} />
@@ -186,7 +186,7 @@ const Form = () => {
               handleChange={handleFieldChange}
               error={getInputErrors(FORM_CONSTANTS.STATE, state.errors)}
             />
-            <Spacer desktop={0} mobile={10} />
+            <Spacer desktop={0} mobile={20} />
           </Col>
           <Col {...FORM_COLUMNS.half}>
             <InputLabel text="Zip Code" />
@@ -202,12 +202,12 @@ const Form = () => {
           </Col>
         </Row>
 
-        <Spacer desktop={30} mobile={20} />
+        <Spacer desktop={30} mobile={10} />
 
         <Row>
           <Col {...FORM_COLUMNS.checkboxLabel}>
             <InputLabel text="Select one or more Products" />
-            <Spacer desktop={0} mobile={10} />
+            <Spacer desktop={0} mobile={15} />
           </Col>
           <Col {...FORM_COLUMNS.checkbox}>
             <Checkbox
