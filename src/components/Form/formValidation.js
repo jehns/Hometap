@@ -85,7 +85,7 @@ class FormValidation {
     if (phoneStripped.length !== 10) {
       this.errors.push({
         input: FORM_CONSTANTS.PHONE,
-        message: "please enter a valid phone nummber."
+        message: "please enter a valid phone number."
       })
       return;
     }
