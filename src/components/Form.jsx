@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 import BasicInput from '../components/inputs/BasicInput';
@@ -8,7 +8,8 @@ import { FORM_COLUMNS } from '../styles/constants'
 import { FORM_CONSTANTS } from '../constants'
 import { useFormContext } from '../context/form';
 import Checkbox from './inputs/Checkbox';
-
+import Button from './inputs/Button';
+import { isSubmitButtonDisabled } from '../utils/form'
 
 const FormTitle = styled.h1`
   font-family: ${props => props.theme.fonts.PTSerifBold};
@@ -25,8 +26,15 @@ const Form = () => {
     dispatch({ type: 'EDIT_FIELD', payload: { name: e.target.name, value: e.target.checked} })
   }
 
+  const handleFormSubmit = (e) => {
+    e.preventDefault()
+    // dispatch({ type: 'SUBMIT_FORM', payload: { name: e.target.name, value: e.target.checked} })
+  }
+
+  const isDisabled = useMemo(() => isSubmitButtonDisabled(state), [state]);
+
   return (
-    <form>
+    <form onSubmit={handleFormSubmit}>
       <FormTitle>Is my property eligible for a Hometap Investment?</FormTitle>
       <Grid>
         <Row>
@@ -44,7 +52,7 @@ const Form = () => {
             <InputLabel text="Last Name" />
             <Spacer value={8} />
             <BasicInput
-              placeholderText="First"
+              placeholderText="Last"
               name={FORM_CONSTANTS.LAST_NAME}
               value={state[FORM_CONSTANTS.LAST_NAME]}
               handleChange={handleFieldChange}
@@ -60,8 +68,23 @@ const Form = () => {
             <Spacer value={8} />
             <BasicInput
               placeholderText="your@email.com"
-              name={FORM_CONSTANTS.FIRST_NAME}
-              value={state[FORM_CONSTANTS.FIRST_NAME]}
+              name={FORM_CONSTANTS.EMAIL}
+              value={state[FORM_CONSTANTS.EMAIL]}
+              handleChange={handleFieldChange}
+            />
+          </Col>
+        </Row>
+
+        <Spacer value={20} />
+
+        <Row>
+          <Col {...FORM_COLUMNS.full}>
+            <InputLabel text="Phone Number" />
+            <Spacer value={8} />
+            <BasicInput
+              placeholderText="(617) 819-1199"
+              name={FORM_CONSTANTS.PHONE}
+              value={state[FORM_CONSTANTS.PHONE]}
               handleChange={handleFieldChange}
             />
           </Col>
@@ -165,6 +188,16 @@ const Form = () => {
               handleChange={handleCheckboxChange}
             />
           </Col>
+        </Row>
+
+        <Spacer value={40} />
+
+        <Row>
+          <Button
+            id="button"
+            text="Button"
+            disabled={isDisabled}
+          />
         </Row>
 
       </Grid>

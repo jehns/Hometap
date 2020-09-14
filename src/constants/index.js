@@ -13,6 +13,18 @@ export const FORM_CONSTANTS = {
   PRODUCT_C: "productC",
 }
 
+export const REQUIRED_FORM_FIELDS = [
+  FORM_CONSTANTS.FIRST_NAME,
+  FORM_CONSTANTS.LAST_NAME,
+  FORM_CONSTANTS.EMAIL,
+  FORM_CONSTANTS.PHONE,
+  FORM_CONSTANTS.STREET,
+  FORM_CONSTANTS.CITY,
+  FORM_CONSTANTS.STATE,
+  FORM_CONSTANTS.ZIP,
+  [FORM_CONSTANTS.PRODUCT_A, FORM_CONSTANTS.PRODUCT_B, FORM_CONSTANTS.PRODUCT_C]
+]
+
 export const States = [
   'alabama',        'alaska',         'arizona',
   'arkansas',       'california',     'colorado',
