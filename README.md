@@ -15,5 +15,4 @@
 
 ### Deployed at: https://frosty-bardeen-3fe548.netlify.app/
 
-
-### for development on you local machine run "npm run dev"
+### for development/viewing on your local machine: clone repo, run "npm install", run "npm run dev".
