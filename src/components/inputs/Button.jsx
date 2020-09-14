@@ -18,6 +18,9 @@ const Button = styled.button`
     opacity: 50%;
     cursor: auto;
   }
+  ${props => props.theme.media.tablet`
+    width: 100%;
+  `};
 `;
 
 const ButtonComponent = ({id, text, disabled}) => {

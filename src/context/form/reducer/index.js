@@ -8,6 +8,8 @@ const reducer = (state, action) => {
   switch (action.type) {
     case 'EDIT_FIELD':
       return {...state, [action.payload.name]: action.payload.value}
+    case 'ERRORS':
+      return {...state, errors: action.payload}
     default:
       return state
   }

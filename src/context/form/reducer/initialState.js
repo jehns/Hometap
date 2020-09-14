@@ -12,5 +12,6 @@ export default {
   [FORM_CONSTANTS.ZIP]: "",
   [FORM_CONSTANTS.PRODUCT_A]: false,
   [FORM_CONSTANTS.PRODUCT_B]: false,
-  [FORM_CONSTANTS.PRODUCT_C]: false
+  [FORM_CONSTANTS.PRODUCT_C]: false,
+  errors: []
 }

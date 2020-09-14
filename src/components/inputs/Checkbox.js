@@ -19,7 +19,7 @@ const Checkbox = ({id, name, text, handleChange}) => {
   return (
     <Wrapper>
       <Input type="checkbox" id={id} name={name} onChange={handleChange} />
-      <Spacer value={5} direction="width" />
+      <Spacer desktop={5} mobile={0} direction="width" />
       <label htmlFor={id}>{text}</label>
     </Wrapper>
   )
