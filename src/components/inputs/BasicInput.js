@@ -7,9 +7,7 @@ import Spacer from '../../utils/Spacer';
 const Input = styled.input`
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-appearance: none;
-  border: 1px solid
-    ${props =>
-      props.error ? props.theme.colors.red : props.isActive ? props.theme.colors.blue : props.theme.colors.lightGray};
+  border: 1px solid ${props => props.error ? props.theme.colors.red : props.theme.colors.lightGray};
   border-radius: .25rem;
   outline: none;
   height: 38px;
@@ -18,15 +16,19 @@ const Input = styled.input`
   font-size: 1rem;
   text-indent: 9px;
   color: ${props => props.theme.colors.black};
+  caret-color: ${props => props.theme.colors.black};
   &::placeholder {
     color: ${props => props.theme.colors.darkGray4};
   }
-  caret-color: ${props => props.theme.colors.black};
+  &:focus {
+    border: 1px solid ${props => props.theme.colors.blue};
+  }
 `
 
 const Wrapper = styled.div`
   position: relative;
 `
+
 const ErrorText = styled.div`
   position: absolute;
   color: ${props => props.theme.colors.red};
@@ -59,13 +61,12 @@ BasicInput.propTypes = {
   handleChange: PropTypes.func,
   name: PropTypes.string,
   value: PropTypes.string,
-  // error: PropTypes.bool
 };
 
 BasicInput.defaultProps = {
   placeholderText: '',
   name: "",
-  value: ""
+  value: "",
 };
 
 
